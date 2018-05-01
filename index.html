@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<style>
+	.col-md {
+		min-height: 8em;
+		border: 1px solid #000;
+		margin: 0.5em;
+		text-align: center;
+		font-size: 28px;
+	}
+	.blue {
+		background-color: blue;
+	}
+	.green {
+		background-color: green;
+	}
+	.yellow {
+		background-color: yellow
+	}
+	.red {
+		background-color: red;
+	}
+	.border {
+		border: 6px solid yellow;
+	}
+</style>
+<body>
+
+	<!-- Bootstrap html markup is seen here -->
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md box blue">Panel A</div>
+	    <div class="col-md box green">Panel B</div>
+	    <div class="w-100"></div>
+	    <div class="col-md box yellow">Panel C</div>
+	    <div class="col-md box red">Panel D</div>
+	  </div>
+
+	  <!-- Buttons -->
+	  <button type="button" class="btn btn-primary" id="target1">Target</button>
+	  <button type="button" class="btn btn-secondary" id="target2">Secondary</button>
+	  <button type="button" class="btn btn-success" id="target3">Success</button>
+	  <button type="button" class="btn btn-danger" id="target4">Danger</button>
+
+	</div>
+	<!-- Bootstrap Ends -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script type="">
+		// 1. Chaining 
+		// 2. Callback function
+
+		$(document).ready(function(){
+			//All jQuery code here:
+
+			// This is a click event in jQuery
+			// It is targetting a buttom in the DOM
+			$( '#target1' ).click(function() {
+				firstPanel;
+			});
+
+			$( '#target2' ).click(function() {
+			  $( '.green' ).hide(3000).show(3000, function(){
+			  	//This function is almost like the 3rd step 
+			  	$('.green').addClass( 'border' );
+			  });
+			});
+
+			$( '#target3' ).click(function() {
+			  console.log('working');
+			  $( '.yellow' ).toggle();
+			  console.log('a');
+			  $('.red').hideee();
+			  console.log('b');
+			});
+
+			$( '#target4' ).click(function() {
+			  $( '.red' ).hide(3000);
+			});
+
+
+			function firstPanel(){
+				$( '.blue' ).hide(3000, function(){
+					//Body of the function is where we 
+					// Actually do things / order things
+					alert('hello Sumitra');
+					$('.blue').show(1000).hide(1000).show(1000)
+				});
+			}
+
+		}); // Document Ready ENDS
+	</script>
+</body>
+</html>
+	
